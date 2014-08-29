@@ -47,6 +47,10 @@ func main() {
 	}
 
 	message := strings.Join(flag.Args(), " ")
+	if message == "" {
+		fmt.Println("Error: you must say something!")
+		os.Exit(1)
+	}
 
 	payload := IncomingWebhook{
 		Channel:  channel,
